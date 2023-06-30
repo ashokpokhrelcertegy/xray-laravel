@@ -48,6 +48,7 @@ class SegmentCollector
         $tracer = $this->tracer()
             ->setTraceHeader($traceId)
             ->setName(config('app.name') . ' HTTP')
+            ->setSampled(true)
             ->setClientIpAddress($request->getClientIp())
             ->addAnnotation('Framework', 'Laravel ' . app()->version())
             ->addAnnotation('PHP', PHP_VERSION)
